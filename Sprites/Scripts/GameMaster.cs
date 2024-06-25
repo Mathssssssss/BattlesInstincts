@@ -18,5 +18,10 @@ public class GameMaster : MonoBehaviour
         healthbarEnemy.value = 1;
         healthbarPlayer.value = 1;
     }
+
+    void SetHealthGUI() 
+    {
+        healthbarEnemy.value = Enemy.currentHealth / Enemy.maxHealth;
+        healthbarPlayer.value = Player.currentHealth / Player.maxHealth;
     }
 }
