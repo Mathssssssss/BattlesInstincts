@@ -191,6 +191,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &136309640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1968853811234479468, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+  m_PrefabInstance: {fileID: 790098124809838041}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &217272568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2684,7 @@ GameObject:
   - component: {fileID: 688094351}
   - component: {fileID: 688094350}
   - component: {fileID: 688094352}
+  - component: {fileID: 688094353}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -2763,6 +2775,36 @@ MonoBehaviour:
   CurrentHealth: 500
   Damage: 10
   Heal: 10
+  IsDefended: 0
+--- !u!114 &688094353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688094349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433e33ec072f36845a989489b377aa09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConfigurationPlayer: {fileID: 688094352}
+  ConfigurationEnemy: {fileID: 1422129709}
+  UpdatingEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1437380164}
+        m_TargetAssemblyTypeName: GameMaster, Assembly-CSharp
+        m_MethodName: SetHealthGUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &973035570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2855,6 +2897,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162394028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8220649989633115606, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+  m_PrefabInstance: {fileID: 790098124809838041}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1404986815
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,6 +3265,7 @@ MonoBehaviour:
   CurrentHealth: 300
   Damage: 5
   Heal: 5
+  IsDefended: 1
 --- !u!1 &1437380162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3256,10 +3310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bf4181c31c3b147abf239959a2c354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbarEnemy: {fileID: 0}
-  healthbarPlayer: {fileID: 0}
-  Enemy: {fileID: 0}
-  Player: {fileID: 0}
+  healthbarEnemy: {fileID: 136309640}
+  healthbarPlayer: {fileID: 1162394028}
+  Enemy: {fileID: 1422129709}
+  Player: {fileID: 688094352}
 --- !u!1 &1802153244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,9 +3432,89 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688094353}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Defend
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4229660591991515357, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4752725837336692383, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
       propertyPath: m_Name
       value: GAMECORE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688094353}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983785978837502436, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6263020443286791461, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3389,6 +3523,50 @@ PrefabInstance:
     - target: {fileID: 6263020443286791461, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890012474768988505, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Name
+      value: Health Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 688094353}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640681402255534119, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7817637864873594036, guid: 46ca5f10f3a24504bbe2e3e033881b8b, type: 3}
       propertyPath: m_Pivot.x
